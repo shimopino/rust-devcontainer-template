@@ -5,12 +5,19 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"image": "mcr.microsoft.com/devcontainers/rust:1-1-bookworm",
 	"features": {
+		// 右記のURLから利用する機能をインストールする https://containers.dev/features
+		// vadimcn.vscode-lldb, rust-lang.rust-analyzer, tamasfe.even-better-toml, serayuzgur.crates
+		"ghcr.io/devcontainers/features/rust:1": {},
+		"ghcr.io/devcontainers/features/aws-cli:1": {},
+		"ghcr.io/devcontainers/features/azure-cli:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
 		"ghcr.io/guiyomh/features/vim:0": {},
 		"ghcr.io/enricosecondulfo/devcontainer-features/volta:1": {},
 		"ghcr.io/devcontainers-community/npm-features/prettier:1": {},
 		"ghcr.io/lee-orr/rusty-dev-containers/cargo-expand:0": {},
 		"ghcr.io/lee-orr/rusty-dev-containers/cargo-make:0": {},
-		"ghcr.io/lee-orr/rusty-dev-containers/cargo-nextest:0": {}
+		"ghcr.io/lee-orr/rusty-dev-containers/cargo-nextest:0": {},
+		"ghcr.io/lee-orr/rusty-dev-containers/cargo-watch:0": {}
 	}
 
 	// Use 'mounts' to make the cargo cache persistent in a Docker Volume.
