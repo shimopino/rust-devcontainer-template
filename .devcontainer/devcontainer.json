@@ -5,9 +5,14 @@
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	// "image": "mcr.microsoft.com/devcontainers/rust:1-1-bookworm",
 	"dockerFile": "./Dockerfile",
+	"build": {
+		"args": {
+			// https://github.com/rui314/mold
+			"MOLD_VERSION": "v2.2.0"
+		}
+	},
 	"features": {
 		// 右記のURLから利用する機能をインストールする https://containers.dev/features
-		// vadimcn.vscode-lldb, rust-lang.rust-analyzer, tamasfe.even-better-toml, serayuzgur.crates
 		"ghcr.io/devcontainers/features/rust:1": {},
 		"ghcr.io/devcontainers/features/aws-cli:1": {},
 		"ghcr.io/devcontainers/features/azure-cli:1": {},

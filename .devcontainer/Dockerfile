@@ -1,11 +1,25 @@
 FROM mcr.microsoft.com/devcontainers/rust:1-1-bookworm
 
+# 各種パッケージの情報
+ARG MOLD_VERSION
+
 RUN apt-get update && apt-get -y install \
     zsh \
     sed \
     git \
+    clang \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
+
+# Install Mold
+RUN git clone https://github.com/rui314/mold.git \
+    && mkdir mold/build \
+    && cd mold/build \
+    && git checkout ${MOLD_VERSION} \
+    && ../install-build-deps.sh \
+    && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=c++ .. \
+    && cmake --build . -j $(nproc) \
+    && cmake --build . --target install
 
 RUN zsh
 
