@@ -10,6 +10,7 @@
     - cargo-expand
     - cargo-watch
     - cargo-make
+        - `cargo make dev` => `cargo watch -x check -x test -x run`
     - cargo-nexttest
 - Other tools
     - AWS CLI
@@ -17,3 +18,5 @@
     - Vim
     - Github CLI
     - Volta (Node.js Version Manager)
+- Compiler Settings
+    - mold linker
