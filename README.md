@@ -20,3 +20,9 @@
     - Volta (Node.js Version Manager)
 - Compiler Settings
     - mold linker
+
+## Github Actions
+
+- Build and Test
+- Rustfmt
+- Clippy
