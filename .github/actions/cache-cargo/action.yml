@@ -1,0 +1,10 @@
+# https://docs.github.com/en/actions/creating-actions/creating-a-composite-action#creating-an-action-metadata-file
+name: cargo-cache
+description: caching .cargo directory
+runs:
+  using: composite
+
+  # https://github.com/marketplace/actions/rust-cache
+  steps:
+    - name: Cache cargo directory
+      uses: Swatinem/rust-cache@v2
