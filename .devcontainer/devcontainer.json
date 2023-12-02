@@ -45,31 +45,7 @@
 	"postCreateCommand": "rustc --version",
 
 	// Configure tool-specific properties.
-	"customizations": {
-		"vscode": {
-			"settings": {
-				"editor.defaultFormatter": "rust-lang.rust-analyzer",
-				"editor.formatOnSave": true,
-				"[markdown]": {
-					"editor.defaultFormatter": "esbenp.prettier-vscode",
-					"editor.unicodeHighlight.ambiguousCharacters": false,
-					"editor.unicodeHighlight.invisibleCharacters": false,
-					"diffEditor.ignoreTrimWhitespace": false,
-					"editor.wordWrap": "on",
-					"editor.quickSuggestions": {
-						"comments": "off",
-						"strings": "off",
-						"other": "off"
-					}
-				}
-			},
-			"extensions": [
-				"github.vscode-github-actions",
-				"patbenatar.advanced-new-file",
-				"IronGeek.vscode-env"
-			]
-		}
-	}
+	"customizations": {}
 
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"

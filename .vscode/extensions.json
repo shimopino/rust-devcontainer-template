@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "rust-lang.rust-analyzer",
+    "CodeLLDB.vscode-lldb",
+    "github.vscode-github-actions",
+    "patbenatar.advanced-new-file",
+    "IronGeek.vscode-env"
+  ]
+}
