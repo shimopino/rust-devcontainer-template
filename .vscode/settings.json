@@ -14,5 +14,6 @@
       "strings": "off",
       "other": "off"
     }
-  }
+  },
+  "rust-analyzer.check.command": "clippy"
 }
