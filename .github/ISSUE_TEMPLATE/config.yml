@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: New Feature
-    url: https://github.com/vitejs/vite-plugin-react/issues/new/choose
+    url: https://github.com/shimopino/rust-devcontainer-template/issues/new/choose
     about: You want to add New Feature
