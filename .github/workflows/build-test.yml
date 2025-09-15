@@ -2,9 +2,9 @@ name: Rust
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 env:
   CARGO_TERM_COLOR: always
@@ -19,12 +19,12 @@ jobs:
         uses: rui314/setup-mold@v1
       - name: Install the Rust toolchain
         uses: dtolnay/rust-toolchain@stable
-      - name: Check Caching
-        uses: ./.github/actions/cache-cargo
+      - name: Cache cargo directories
+        uses: Swatinem/rust-cache@v2
       - name: Build
-        run: cargo build --verbose
+        run: cargo build --verbose --locked
       - name: Run tests
-        run: cargo test --verbose
+        run: cargo test --verbose --locked
 
   fmt:
     name: Rustfmt
@@ -34,8 +34,8 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt
-      - name: Check Caching 
-        uses: ./.github/actions/cache-cargo
+      - name: Cache cargo directories
+        uses: Swatinem/rust-cache@v2
       - name: Enforce Formatting
         run: cargo fmt --check
 
@@ -49,15 +49,15 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy
-      - name: Check Caching 
-        uses: ./.github/actions/cache-cargo
+      - name: Cache cargo directories
+        uses: Swatinem/rust-cache@v2
       - name: Linting
-        run: cargo clippy -- -D warnings
+        run: cargo clippy --locked -- -D warnings
 
   action-timeline:
     needs: [build, fmt, clippy]
     runs-on: ubuntu-latest
     steps:
-    - uses: Kesin11/actions-timeline@v2
-      with:
-        github-token: ${{ github.token }}
+      - uses: Kesin11/actions-timeline@v2
+        with:
+          github-token: ${{ github.token }}
