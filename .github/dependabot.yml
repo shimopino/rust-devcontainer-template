@@ -1,0 +1,31 @@
+version: 2
+updates:
+  # Keep Cargo dependencies up to date
+  - package-ecosystem: "cargo"
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "02:00"
+      timezone: "Asia/Tokyo"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "deps(cargo)"
+    labels:
+      - dependencies
+      - cargo
+    cooldown:
+      default-days: 7 # 最新のライブラリを即座に適用しないように1週間の待機時間を設定する
+
+  # Keep GitHub Actions up to date
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: daily
+      time: "02:30"
+      timezone: "Asia/Tokyo"
+    open-pull-requests-limit: 10
+    commit-message:
+      prefix: "deps(gha)"
+    labels:
+      - dependencies
+      - github-actions
