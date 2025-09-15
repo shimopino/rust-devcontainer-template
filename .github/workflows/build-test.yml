@@ -19,6 +19,8 @@ jobs:
         uses: rui314/setup-mold@725a8794d15fc7563f59595bd9556495c0564878 # staging
       - name: Install the Rust toolchain
         uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: 1.85.0
       - name: Cache cargo directories
         uses: Swatinem/rust-cache@98c8021b550208e191a6a3145459bfc9fb29c4c0 # v2.8.0
       - name: Build
@@ -33,6 +35,7 @@ jobs:
       - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
       - uses: dtolnay/rust-toolchain@stable
         with:
+          toolchain: 1.85.0
           components: rustfmt
       - name: Cache cargo directories
         uses: Swatinem/rust-cache@98c8021b550208e191a6a3145459bfc9fb29c4c0 # v2.8.0
@@ -48,6 +51,7 @@ jobs:
         uses: rui314/setup-mold@725a8794d15fc7563f59595bd9556495c0564878 # staging
       - uses: dtolnay/rust-toolchain@stable
         with:
+          toolchain: 1.85.0
           components: clippy
       - name: Cache cargo directories
         uses: Swatinem/rust-cache@98c8021b550208e191a6a3145459bfc9fb29c4c0 # v2.8.0
