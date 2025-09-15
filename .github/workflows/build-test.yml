@@ -23,10 +23,12 @@ jobs:
           toolchain: 1.85.0
       - name: Cache cargo directories
         uses: Swatinem/rust-cache@98c8021b550208e191a6a3145459bfc9fb29c4c0 # v2.8.0
+
+      # TODO: --locked オプションを使用して依存関係の整合性を確認する
       - name: Build
-        run: cargo build --verbose --locked
+        run: cargo build --verbose
       - name: Run tests
-        run: cargo test --verbose --locked
+        run: cargo test --verbose
 
   fmt:
     name: Rustfmt
@@ -56,7 +58,7 @@ jobs:
       - name: Cache cargo directories
         uses: Swatinem/rust-cache@98c8021b550208e191a6a3145459bfc9fb29c4c0 # v2.8.0
       - name: Linting
-        run: cargo clippy --locked -- -D warnings
+        run: cargo clippy -- -D warnings
 
   action-timeline:
     needs: [build, fmt, clippy]
