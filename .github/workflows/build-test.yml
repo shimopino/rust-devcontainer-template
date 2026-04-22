@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
       - name: Setup Mold Linker
-        uses: rui314/setup-mold@725a8794d15fc7563f59595bd9556495c0564878 # staging
+        uses: rui314/setup-mold@9c9c13bf4c3f1adef0cc596abc155580bcb04444 # staging
       - name: Install the Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         with:
@@ -50,7 +50,7 @@ jobs:
     steps:
       - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
       - name: Setup Mold Linker
-        uses: rui314/setup-mold@725a8794d15fc7563f59595bd9556495c0564878 # staging
+        uses: rui314/setup-mold@9c9c13bf4c3f1adef0cc596abc155580bcb04444 # staging
       - uses: dtolnay/rust-toolchain@stable
         with:
           toolchain: 1.85.0
